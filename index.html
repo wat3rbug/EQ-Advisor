@@ -1,0 +1,49 @@
+<! DOCTYPE html>
+<html>
+<head>
+<title>Test Pages for JS functions </title>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="test.js"></script>
+<script src="bootstrap-4/js/bootstrap.min.js"></script>
+</head>
+<body>
+	Calculate how much velium for Thurgadin <a href="#test" onblur="showPotGuide();">potions</a>		
+</body>
+</html>
+
+<div class="modal fade" tabindex="-1" role="dialog" class="potModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<hr class="modal-title">Thurgadin potion requirements</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden=true>&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-1 text-right">Potions Needed</div><div class="col-sm-1"><input type="number" class="pots"></div>
+				</div>
+				<div class="row">&nbsp;</div>
+				<div class="row">
+					<div class="col-sm-1 text-right">Blocks</div><div class="col-sm-1"><input type="number" class="blocks"></div>
+				</div>
+				<div class="row">&nbsp;</div>
+				<div class="row">
+					<div class="col-sm-1 text-right">Large Bricks</div><div class="col-sm-1"><input type="number" class="lgBricks"></div>
+				</div>
+				<div class="row">&nbsp;</div>
+				<div class="row">
+					<div class="col-sm-1 text-right">Small Bricks</div><div class="co-sm-1"><input type="number" class="smBricks"></div>
+				</div>
+				<div class="row">&nbsp;</div>
+					<div class="col-sm-1 text-right">Small Pieces</div><div class="col-sm-1"><input type="number" class="smPieces"></div>
+				</div>
+				<div class="row">&nbsp;</div>
+				<div class="row">
+					<div class="col-sm-1 text-right">Potions Possible</div><div class="col-sm-1"><label class="potResult">0</label></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
