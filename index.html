@@ -1,17 +1,37 @@
 <! DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 <title>Test Pages for JS functions </title>
-<script src="jquery-3.3.1.min.js"></script>
-<script src="test.js"></script>
-<script src="bootstrap-4/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="bootstrap-4/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="bootstrap-4/js/bootstrap.min.js"> -->
+
+
 </head>
 <body>
-	Calculate how much velium for Thurgadin <a href="#test" onblur="showPotGuide();">potions</a>		
+	<!-- Order is important, have JQuery loaded before bootstrap otherwise you get modal undefined etc. -->
+	
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="bootstrap-4/js/bootstrap.min.js"></script>
+	
+	<script src="test.js"></script>
+	<div class="col-sm-12">
+		<div class="jumbotron">
+			<h1>EQ Advisor</h1>The place to come for Everquest Project 1999 stuff
+		</div>
+	</div>
+	<div class="row">&nbsp;</div>
+	<div class="row">
+		<div class="col-sm-1">&nbsp;</div>
+		<div class="col-sm-11">
+			Calculate how much velium for Thurgadin potions&nbsp;<button type="button" class="btn btn-primary" onclick="showPotGuide();">Calculate</button>	
+		</div>
+	</div>	
 </body>
 </html>
 
-<div class="modal fade" tabindex="-1" role="dialog" class="potModal">
+<div class="modal" id="potModal" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -22,28 +42,34 @@
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<div class="col-sm-1 text-right">Potions Needed</div><div class="col-sm-1"><input type="number" class="pots"></div>
+					<div class="col-sm-6 text-right">Potions Needed</div><div class="col-sm-6"><input type="number" id="pots" placeholder="0" onclick="calcPotions();"></div>
 				</div>
 				<div class="row">&nbsp;</div>
 				<div class="row">
-					<div class="col-sm-1 text-right">Blocks</div><div class="col-sm-1"><input type="number" class="blocks"></div>
+					<div class="col-sm-6 text-right">Blocks</div><div class="col-sm-6"><input type="number" id="blocks" placeholder="0" onclick="calcPotions();"></div>
 				</div>
 				<div class="row">&nbsp;</div>
 				<div class="row">
-					<div class="col-sm-1 text-right">Large Bricks</div><div class="col-sm-1"><input type="number" class="lgBricks"></div>
+					<div class="col-sm-6 text-right">Large Bricks</div><div class="col-sm-6"><input type="number" id="lgBricks" placeholder="0" onclick="calcPotions();"></div>
 				</div>
 				<div class="row">&nbsp;</div>
 				<div class="row">
-					<div class="col-sm-1 text-right">Small Bricks</div><div class="co-sm-1"><input type="number" class="smBricks"></div>
+					
+					<div class="col-sm-6 text-right">Small Bricks</div><div class="col-sm-6"><input type="number" id="smBricks" placeholder="0" onclick="calcPotions();"></div>
 				</div>
-				<div class="row">&nbsp;</div>
-					<div class="col-sm-1 text-right">Small Pieces</div><div class="col-sm-1"><input type="number" class="smPieces"></div>
-				</div>
+				
 				<div class="row">&nbsp;</div>
 				<div class="row">
-					<div class="col-sm-1 text-right">Potions Possible</div><div class="col-sm-1"><label class="potResult">0</label></div>
+					<div class="col-sm-6 text-right">Small Pieces</div><div class="col-sm-6"><input type="number" id="smPieces" placeholder="0" onclick="calcPotions();"></div>
 				</div>
-			</div>
+				
+				
+				<div class="row">&nbsp;</div>
+				<div class="row">
+					<div class="col-sm-6 text-right">Potions Possible</div><div class="col-sm-6"><div id="potResult"></div>
+				</div>
+			</div>	
+			<div class="modal-footer panel-primary">&nbsp;</div>
 		</div>
 	</div>
 </div>
