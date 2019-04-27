@@ -1,10 +1,11 @@
 
-function showPotGuide() {
+function addRecord() {
 
-	$('#potModal').modal('show');
+	$('#addMeasurement').modal('show');
+	alert('it is called');
 }
 
-function calcPotions() {
+function a() {
 	var totalNeeded = $('#pots').val() * 4;
 	var blocks = $('#blocks').val() * 8;
 	var lgBricks = $('#lgBricks').val() * 4;
