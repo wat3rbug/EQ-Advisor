@@ -1,9 +1,12 @@
-$(document).ready(
-	function showPotGuide() {
-		$('#potModal').modal('show');
-	}
+$(document).ready(function() {
 	
-);
+	$('#potBtn').on("click", function() {
+		$('#potModal').modal('show');
+	});
+	
+
+	
+});
 
 // function showPotGuide() {
 // 	var totalNeeded = $('#pots').val() * 4;
