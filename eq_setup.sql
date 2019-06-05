@@ -209,6 +209,3 @@ create table nextzone (
 	constraint zone_fk foreign key(zoneid) references zone(id),
 	constraint nextzone_fk foreign key(nextzoneid) references zone(id)
 );
-
-
-
