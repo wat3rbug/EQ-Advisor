@@ -1,36 +1,36 @@
 create database everquest;
 use everquest;
 
-create table equser (
+create table if not exists equser (
 firstName varchar(14) NOT NULL,
 lastName varchar(14) NOT NULL,
 id int not null auto_increment,
-email varchar(20) NOT NULL,
-login varchar(14) NOT NULL,
+email varchar(50) NOT NULL,
+login varchar(16) NOT NULL,
 primary key (id)
 );
 
-create table race (
+create table if not exists race (
 id int not null auto_increment,
 racename varchar(14) not null,
 race_abbr varchar(3) not null,
 primary key(id)
 );
 
-create table class (
+create table if not exists class (
 id int not null auto_increment,
 classname varchar(14) not null,
 class_abbr varchar(3) not null,
 primary key(id)
 );
 
-create table location (
+create table if not exists location (
 id int not null,
 locationname varchar(14) not null,
 primary key(id)
 );
 
-create table item(
+create table if not exists item(
 	id int not null,
 itemname varchar(40) not null,
 primary key (id),
@@ -56,14 +56,14 @@ foreign key (location) references location(id),
 foreign key (class) references class(id)
 );
 
-create table picture(
+create table if not exists picture(
 	id int not null,
 	primary key(id),
 	picname varchar(14) not null,
 	picLocation varchar(255) not null
 );
 
-create table characters(
+create table if not exists characters(
 	userID int not null,
 	foreign key (userID) references equser(id),
 	avatarname varchar(20) not null,
@@ -127,7 +127,7 @@ create table characters(
 	foreign key(ammoslot) references item(id)
 );
 
-create table itemclassraceslot(
+create table if not exists itemclassraceslot(
 	itemid int not null,
 	foreign key(itemid) references item(id),
 	classid int not null,
@@ -139,7 +139,7 @@ create table itemclassraceslot(
 	primary key (itemid, classid, raceid, slotid)
 );
 
-create table storyelement(
+create table if not exists storyelement(
 	id int not null,
 	primary key(id),
 	avatarname varchar(20) not null,
@@ -178,7 +178,7 @@ insert into class (classname, class_abbr) values('shaman', 'shm');
 insert into class (classname, class_abbr) values('rogue', 'rog');
 insert into class (classname, class_abbr) values('shadow knight', 'shd');
 	
-create table classdefaults (
+create table if not exists classdefaults (
 	id int not null auto_increment,
 	 class int  not null,
 	 race int not null,
@@ -194,7 +194,7 @@ create table classdefaults (
 	 constraint race_fk foreign key(race) references race(id)
 );
 
-create table zone (
+create table if not exists zone (
 	id int not null auto_increment,
 	name varchar(255) not null,
 	description varchar(1000) not null,
