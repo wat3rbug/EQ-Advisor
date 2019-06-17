@@ -198,10 +198,12 @@ create table if not exists zone (
 	id int not null auto_increment,
 	name varchar(255) not null,
 	description varchar(1000) not null,
+	link varchar(255) not null,
+	map blob not null,
 	constraint pk primary key(id)
 );
 
-create table nextzone (
+create table if not exists nextzone (
 	id int not null auto_increment,
 	zoneid int not null,
 	nextzoneid int not null,
